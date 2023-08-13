@@ -26,12 +26,13 @@ btn2.addEventListener('click', () => {
     const fetchFData2 = async () => {
         
             
-            const resp = await fetch('https://randomuser.me/api/?results=5?gender=male');
+            const resp = await fetch('https://randomuser.me/api/?results=5&gender=male');
             const data = await resp.json();
+            console.log(data);
+
         for (let index = 0; index < 5; index++) {
             const newP = document.createElement('p');
             const img = document.createElement('img');
-            console.log(data);
             console.log(':)');
             newP.textContent += data.results[index].name.first + ' ' + data.results[index].name.last + '  ';
             newP.textContent += data.results[index].email + '  ';
